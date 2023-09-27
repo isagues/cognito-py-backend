@@ -10,6 +10,12 @@ import hmac
 import hashlib
 import base64
 import json
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 
 class NewUser(BaseModel):
     username: str
@@ -44,6 +50,9 @@ def login(loginUser: LoginUser):
     return login(loginUser)
     
 
+USER_POOL_ID = os.getenv('USER_POOL_ID')
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 
 def get_secret_hash(username):
     msg = username + CLIENT_ID

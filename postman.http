@@ -1,0 +1,27 @@
+POST http://localhost:8000/signup
+content-type: application/json
+
+{
+    "username": "isagues2",
+    "email": "toroma3193@alvisani.com",
+    "password": "P4ssword!",
+    "name": "isagues"
+}
+###
+
+POST http://localhost:8000/signup/confirm
+content-type: application/json
+
+{
+    "username": "isagues2",
+    "code": "691162"
+}
+###
+
+POST http://localhost:8000/login
+content-type: application/json
+
+{
+    "username": "isagues2",
+    "password": "P4ssword!"
+}
