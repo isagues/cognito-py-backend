@@ -1,16 +1,12 @@
-from time import sleep, time
-from json import dumps, loads
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
 import logging
 import boto3
-import botocore.exceptions
 import hmac
 import hashlib
 import base64
 import sqlite3
-import json
 import os
 from dotenv import load_dotenv
 import sqlite3
@@ -135,9 +131,9 @@ def resend_verification(resend: ResendVerification):
       
     return  {"error": False, "success": True}
 
+# TODO: forgotPassword
 
 ## LOGIN
-
 
 def store_session(username: str, response):
     cursor.execute("""
@@ -220,7 +216,6 @@ def internal_refresh(username: str):
     except Exception as e:
         return None, e.__str__()
     return resp, None
-
 
 def login(loginUser: LoginUser):
 
