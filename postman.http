@@ -3,7 +3,7 @@ content-type: application/json
 
 {
     "username": "isagues2",
-    "email": "toroma3193@alvisani.com",
+    "email": "yebol65547@estudys.com",
     "password": "P4ssword!",
     "name": "isagues"
 }
@@ -14,7 +14,15 @@ content-type: application/json
 
 {
     "username": "isagues2",
-    "code": "691162"
+    "code": "817917"
+}
+###
+
+POST http://localhost:8000/signup/resend
+content-type: application/json
+
+{
+    "username": "isagues2"
 }
 ###
 
@@ -24,4 +32,12 @@ content-type: application/json
 {
     "username": "isagues2",
     "password": "P4ssword!"
+}
+###
+
+POST http://localhost:8000/refresh
+content-type: application/json
+
+{
+    "username": "isagues2"
 }
