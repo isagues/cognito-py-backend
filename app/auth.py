@@ -286,6 +286,5 @@ def refresh_handler(refreshUser: RefreshUser):
     
 
 if __name__ == '__main__':
-    logging.getLogger("uvicorn").handlers.clear()
+    # logging.getLogger("uvicorn").handlers.clear()
     uvicorn.run(app, host="0.0.0.0", port=8000)
-
